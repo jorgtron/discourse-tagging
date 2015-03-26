@@ -1,0 +1,55 @@
+# encoding: utf-8
+# This file contains content for the client portion of Discourse, sent out
+# to the Javascript app.
+#
+# To work with us on translations, see:
+# https://www.transifex.com/projects/p/discourse-org/
+#
+# This is a "source" file, which is used by Transifex to get translations for other languages.
+# After this file is changed, it needs to be pushed by a maintainer to Transifex:
+#
+#   tx push -s
+#
+# Read more here: https://meta.discourse.org/t/contribute-a-translation-to-discourse/14882
+#
+# To validate this YAML file after you change it, please paste it into
+# http://yamllint.com/
+
+nb_NO:
+  js:
+    admin:
+      logs:
+        staff_actions:
+          actions:
+            deleted_tag: "slettet aksje"
+            renamed_tag: "endret navn"
+
+    topics:
+      bulk:
+        change_tags: "Rediger Aksje"
+        choose_new_tags: "Choose new tags for these topics:"
+        changed_tags: "The tags of those topics were changed."
+
+    tagging:
+      all_tags: "Alle aksjer"
+      changed: "tags changed:"
+      tags: "Aksjer"
+      choose_for_topic: "Aksjeticker (f.eks FUNCOM eller TSLA)"
+      delete_tag: "Slett aksje"
+      delete_confirm: "Are you sure you want to delete that tag?"
+      rename_tag: "Rediger aksje"
+      rename_instructions: "Choose a new name for the tag:"
+
+      notifications:
+        watching:
+          title: "Følger"
+          description: "Du vil automatisk følge alle nye emner om denne aksjen. Du vil bli varslet om alle nye innlegg og emner. Antallet uleste og nye emner vil også vises."
+        tracking:
+          title: "Sporing"
+          description: "Du vil automatisk følge alle nye emner om denne aksjen. En teller for antall uleste og nye innlegg vil vises ved siden av emnet."
+        regular:
+          title: "Vanlig"
+          description: "Du vil bli varslet om noen nevner ditt @navn eller svarer på din post i ember om denne aksjen."
+        muted:
+          title: "Dempet"
+          description: "Du vil ikke bli varslet om noe vedrørende disse emnene i om denne aksjen og de vil ikke vises i din ulest-liste."
