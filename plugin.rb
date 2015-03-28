@@ -10,7 +10,7 @@ register_asset 'stylesheets/tagging.scss'
 after_initialize do
 
   TAGS_FIELD_NAME = "tags"
-  TAGS_FILTER_REGEXP = /[<\\\/\>\.\#\?\&\s]/
+  TAGS_FILTER_REGEXP = /[<\\\/\>\#\?\&\s]/
 
   module ::DiscourseTagging
     class Engine < ::Rails::Engine
