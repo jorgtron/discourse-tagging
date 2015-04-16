@@ -1,3 +1,7 @@
+{{#if canAdminTag}}
+  {{d-button action="favoriteTag" label="Favoritt" icon="trash-o" class="admin-tag favorite-tag"}}
+{{/if}}
+
 {{#if tagNotification}}
   {{tag-notifications-button tag=tag.id
                              action="changeTagNotification"

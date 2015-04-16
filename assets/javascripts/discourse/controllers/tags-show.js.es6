@@ -32,6 +32,13 @@ export default Ember.Controller.extend(BulkTopicSelection, {
       });
     },
 
+    favoriteTag() {
+      const self = this;
+      console.log('favoriting');
+      
+    },
+
+
     changeTagNotification(id) {
       const tagNotification = this.get('tagNotification');
       tagNotification.update({ notification_level: id });
