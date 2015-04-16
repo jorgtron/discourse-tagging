@@ -35,7 +35,7 @@ export default Ember.Controller.extend(BulkTopicSelection, {
     favoriteTag() {
       const self = this;
       console.log('favoriting');
-      Discourse.ajax("/stock/add_stock_to_users_favorite_stocks?ticker=nas.ol", {
+      Discourse.ajax("/stock/add_stock_to_users_favorite_stocks?ticker=" + this.get('tag.id') + ".ol", {
         type: "GET",
       });
       
