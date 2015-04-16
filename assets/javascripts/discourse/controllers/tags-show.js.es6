@@ -35,6 +35,8 @@ export default Ember.Controller.extend(BulkTopicSelection, {
     favoriteTag() {
       const self = this;
       console.log('favoriting');
+      addStockToUsersFavoriteStocks();
+      alert();
       
     },
 
