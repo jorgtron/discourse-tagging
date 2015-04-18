@@ -6,9 +6,7 @@
 
 {{#if canFavoriteTag}}
   {{d-button action="favoriteTag" label="tagging.favorite" icon="star-o" class="admin-tag favorite-tag"}}
-{{/if}}
-
-{{#if !canFavoriteTag}}
+{{#else}}
   {{d-button action="favoriteTag" label="tagging.unfavorite" icon="star-o" class="admin-tag favorite-tag tag-unfavorite"}}
 {{/if}}
 
