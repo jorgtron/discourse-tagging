@@ -9,6 +9,7 @@ export default Ember.Controller.extend(BulkTopicSelection, {
   canFavoriteTag: function() {
     
     const self = this;
+    console.log(isStockUsersFavorite(this.get('tag.id') + ".ol"));
     return isStockUsersFavorite(this.get('tag.id') + ".ol");
 
   },
