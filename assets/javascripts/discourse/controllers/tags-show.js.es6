@@ -6,6 +6,13 @@ export default Ember.Controller.extend(BulkTopicSelection, {
 
   canAdminTag: Ember.computed.alias('currentUser.staff'),
 
+  canFavoriteTag: function() {
+    
+    const self = this;
+    return isStockUsersFavorite(this.get('tag.id') + ".ol");
+
+  },
+
   loadMoreTopics() {
     return this.get('list').loadMore();
   },
