@@ -9,8 +9,25 @@ export default Ember.Controller.extend(BulkTopicSelection, {
   canFavoriteTag: function() {
     
     const self = this;
-    console.log(isStockUsersFavorite(this.get('tag.id') + ".ol"));
-    return isStockUsersFavorite(this.get('tag.id') + ".ol");
+    ticker = this.get('tag.id') + ".ol");
+
+    Discourse.ajax("/stock/get_users_favorite_stocks", {
+          type: "GET",
+        }).then(function(data) {
+          console.log(data.stock);
+          //data = data.toString;
+
+          for (var i = data.stock.length - 1; i >= 0; i--) {
+            stock = jQuery.parseJSON(data.stock[i]);
+
+            if(ticker.toLowerCase() == stock.symbol.toLowerCase()) { console.log(ticker + ' is a favorite stock: ' + stock.symbol.toLowerCase()); return true; }
+          }
+          console.log(ticker + ' is not a favorite stock');
+          return false;
+
+    });
+
+    //console.log(isStockUsersFavorite(this.get('tag.id') + ".ol"));
 
   },
 
