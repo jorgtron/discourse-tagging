@@ -66,8 +66,11 @@ export default Ember.Controller.extend(BulkTopicSelection, {
        // type: "GET",
       //});
       addStockToUsersFavoriteStocks(this.get('tag.id'));
-      
-
+    },
+    unFavoriteTag() {
+      const self = this;
+      console.log('unfavoriting');
+      removeStockFromUsersFavoriteStocks(this.get('tag.id'));
     },
 
 
