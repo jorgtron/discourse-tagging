@@ -7,7 +7,7 @@ export default Ember.Controller.extend(BulkTopicSelection, {
   canAdminTag: Ember.computed.alias('currentUser.staff'),
 
   canFavoriteTag: function() {
-    
+    alert();
     const self = this;
     ticker = this.get('tag.id');
     console.log('checking can fav stock:' + ticker);
