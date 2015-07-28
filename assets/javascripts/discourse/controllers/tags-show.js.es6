@@ -7,12 +7,12 @@ export default Ember.Controller.extend(BulkTopicSelection, {
   canAdminTag: Ember.computed.alias('currentUser.staff'),
 
   canFavoriteTag: function() {
-    alert();
+    //alert();
     const self = this;
     ticker = this.get('tag.id');
     console.log('checking can fav stock:' + ticker);
 
-    Discourse.ajax("/stock/get_users_favorite_stocks", {
+    /*Discourse.ajax("/stock/get_users_favorite_stocks", {
           type: "GET",
         }).then(function(data) {
           console.log(data.stock);
@@ -27,9 +27,9 @@ export default Ember.Controller.extend(BulkTopicSelection, {
           console.log(ticker + ' is not a favorite stock');
           return false;
 
-    });
+    });*/
 
-    //console.log(isStockUsersFavorite(this.get('tag.id') + ".ol"));
+    return isStockUsersFavorite(ticker);
 
   },
 
