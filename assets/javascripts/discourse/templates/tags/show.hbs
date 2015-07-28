@@ -9,6 +9,8 @@
   {{d-button action="unFavoriteTag" label="tagging.unfavorite" icon="star-o" class="admin-tag favorite-tag tag-unfavorite"}}..
 {{/if}}
 
+{{log 'canFavorite:' canFavoriteTag}}
+
 {{#if canAdminTag}}
   {{d-button action="deleteTag" label="tagging.delete_tag" icon="trash-o" class="admin-tag btn-danger"}}
   {{d-button action="renameTag" actionParam=tag label="tagging.rename_tag" icon="pencil" class="admin-tag"}}
