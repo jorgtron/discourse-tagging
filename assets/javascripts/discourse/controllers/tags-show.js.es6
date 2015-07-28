@@ -32,7 +32,7 @@ export default Ember.Controller.extend(BulkTopicSelection, {
     //return isStockUsersFavorite(ticker);
     return false;
 
-  },
+  }.property('canFavoriteTag'),
 
   loadMoreTopics() {
     return this.get('list').loadMore();
