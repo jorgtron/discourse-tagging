@@ -3,13 +3,13 @@
                              notificationLevel=tagNotification.notification_level}}
 {{/if}}
 
-{{#if isTrue}}
+{{#if canFavorite}}
   {{d-button action="favoriteTag" label="tagging.favorite" icon="star-o" class="admin-tag favorite-tag"}}.
 {{else}}
   {{d-button action="unFavoriteTag" label="tagging.unfavorite" icon="star-o" class="admin-tag favorite-tag tag-unfavorite"}}..
 {{/if}}
 
-{{log 'canFavorite:' canFavoriteTag}}
+{{log 'canFavorite:' canFavorite}}
 
 {{#if canAdminTag}}
   {{d-button action="deleteTag" label="tagging.delete_tag" icon="trash-o" class="admin-tag btn-danger"}}
