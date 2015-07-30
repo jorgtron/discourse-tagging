@@ -11,8 +11,6 @@ export default Ember.Controller.extend(BulkTopicSelection, {
   
   canFavoriteTag: function() {
     
-    this.set('canFavorite', false);
-    
     const self = this;
     ticker = this.get('tag.id');
     console.log('checking can fav stock:' + ticker);
