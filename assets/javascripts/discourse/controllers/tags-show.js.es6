@@ -7,7 +7,7 @@ export default Ember.Controller.extend(BulkTopicSelection, {
   canAdminTag: Ember.computed.alias('currentUser.staff'),
   
   isTrue: true,
-  canFavorite: null,
+  canFavorite: true,
   
   canFavoriteTag: function() {
     
@@ -22,14 +22,14 @@ export default Ember.Controller.extend(BulkTopicSelection, {
           console.log('checking can fav stock step 2:' + ticker);
           //data = data.toString;
           
-          var stockFound = false;
+          var favable = true;
           for (var i = data.stock.length - 1; i >= 0; i--) {
             var stock = jQuery.parseJSON(data.stock[i]);
             console.log('checking can fav stock step 3:' + ticker + i);
-            if(ticker.toLowerCase() == stock.symbol.toLowerCase()) { console.log(ticker + ' is a favorite stock: ' + stock.symbol.toLowerCase()); stockFound = true; }
+            if(ticker.toLowerCase() == stock.symbol.toLowerCase()) { console.log(ticker + ' is a favorite stock: ' + stock.symbol.toLowerCase()); favable = false; }
           }
           
-          this.set('canFavorite', stockFound);
+          this.set('canFavorite', favable);
 
     });
 
