@@ -8,6 +8,7 @@ export default Ember.Controller.extend(BulkTopicSelection, {
 
   canFavoriteTag() {
     alert();
+    //boo
     //const self = this;
     //ticker = this.get('tag.id');
     //console.log('checking can fav stock:' + ticker);
@@ -32,7 +33,7 @@ export default Ember.Controller.extend(BulkTopicSelection, {
     //return isStockUsersFavorite(ticker);
     return false;
 
-  },
+  }.property('canFavoriteTag'),
 
   loadMoreTopics() {
     return this.get('list').loadMore();
