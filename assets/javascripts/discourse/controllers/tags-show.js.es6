@@ -7,10 +7,10 @@ export default Ember.Controller.extend(BulkTopicSelection, {
   canAdminTag: Ember.computed.alias('currentUser.staff'),
   
   isTrue: true,
-  canFavorite: false,
+  canFavorite: true,
   
   canFavoriteTag: function() {
-    //alert();
+    
     this.set('canFavorite', false);
     //boo
     //const self = this;
@@ -35,7 +35,7 @@ export default Ember.Controller.extend(BulkTopicSelection, {
     });*/
 
     //return isStockUsersFavorite(ticker);
-    //return false;
+    return this.get('canFavorite');
 
   },//.property('canFavoriteTag'),
 
