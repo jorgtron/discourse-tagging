@@ -28,13 +28,14 @@ export default Ember.Controller.extend(BulkTopicSelection, {
             console.log('checking can fav stock step 3:' + ticker + i);
             if(ticker.toLowerCase() == stock.symbol.toLowerCase()) { console.log(ticker + ' is a favorite stock: ' + stock.symbol.toLowerCase()); favable = false; }
           }
-          
-          this.set('canFavorite', favable);
+          console.log('favable: ' + favable);          
+          self.set('canFavorite', favable);
+          return self.get('canFavorite');
 
     });
 
     //return isStockUsersFavorite(ticker);
-    return this.get('canFavorite');
+    
 
   }.property('canFavorite'),
 
