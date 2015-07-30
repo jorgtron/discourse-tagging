@@ -24,7 +24,7 @@ export default Ember.Controller.extend(BulkTopicSelection, {
           
           var stockFound = false;
           for (var i = data.stock.length - 1; i >= 0; i--) {
-            stock = jQuery.parseJSON(data.stock[i]);
+            var stock = jQuery.parseJSON(data.stock[i]);
             console.log('checking can fav stock step 3:' + ticker + i);
             if(ticker.toLowerCase() == stock.symbol.toLowerCase()) { console.log(ticker + ' is a favorite stock: ' + stock.symbol.toLowerCase()); stockFound = true; }
           }
