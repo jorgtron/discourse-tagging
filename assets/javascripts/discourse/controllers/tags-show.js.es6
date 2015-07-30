@@ -12,12 +12,12 @@ export default Ember.Controller.extend(BulkTopicSelection, {
   canFavoriteTag: function() {
     
     this.set('canFavorite', false);
-    //boo
-    //const self = this;
-    //ticker = this.get('tag.id');
-    //console.log('checking can fav stock:' + ticker);
+    
+    const self = this;
+    ticker = this.get('tag.id');
+    console.log('checking can fav stock:' + ticker);
 
-    /*Discourse.ajax("/stock/get_users_favorite_stocks", {
+    Discourse.ajax("/stock/get_users_favorite_stocks", {
           type: "GET",
         }).then(function(data) {
           console.log(data.stock);
@@ -27,12 +27,12 @@ export default Ember.Controller.extend(BulkTopicSelection, {
           for (var i = data.stock.length - 1; i >= 0; i--) {
             stock = jQuery.parseJSON(data.stock[i]);
             console.log('checking can fav stock step 3:' + ticker + i);
-            if(ticker.toLowerCase() == stock.symbol.toLowerCase()) { console.log(ticker + ' is a favorite stock: ' + stock.symbol.toLowerCase()); return true; }
+            if(ticker.toLowerCase() == stock.symbol.toLowerCase()) { console.log(ticker + ' is a favorite stock: ' + stock.symbol.toLowerCase()); this.set('canFavorite', true); }
           }
           console.log(ticker + ' is not a favorite stock');
-          return false;
+          this.set('canFavorite', false);
 
-    });*/
+    });
 
     //return isStockUsersFavorite(ticker);
     return this.get('canFavorite');
