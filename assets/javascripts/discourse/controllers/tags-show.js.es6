@@ -21,14 +21,15 @@ export default Ember.Controller.extend(BulkTopicSelection, {
           console.log(data.stock);
           console.log('checking can fav stock step 2:' + ticker);
           //data = data.toString;
-
+          
+          var stockFound = false;
           for (var i = data.stock.length - 1; i >= 0; i--) {
             stock = jQuery.parseJSON(data.stock[i]);
             console.log('checking can fav stock step 3:' + ticker + i);
-            if(ticker.toLowerCase() == stock.symbol.toLowerCase()) { console.log(ticker + ' is a favorite stock: ' + stock.symbol.toLowerCase()); this.set('canFavorite', true); }
+            if(ticker.toLowerCase() == stock.symbol.toLowerCase()) { console.log(ticker + ' is a favorite stock: ' + stock.symbol.toLowerCase()); stockFound = true; }
           }
-          console.log(ticker + ' is not a favorite stock');
-          this.set('canFavorite', false);
+          
+          this.set('canFavorite', stockFound);
 
     });
 
