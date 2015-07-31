@@ -30,6 +30,7 @@ export default Ember.Controller.extend(BulkTopicSelection, {
           }
           console.log('favable: ' + favable);          
           self.set('canFavorite', favable);
+          console.log('canfavorite: ' + self.get('canFavorite'));
           return self.get('canFavorite');
 
     });
