@@ -29,9 +29,10 @@ export default Ember.Controller.extend(BulkTopicSelection, {
             if(ticker.toLowerCase() == stock.symbol.toLowerCase()) { console.log(ticker + ' is a favorite stock: ' + stock.symbol.toLowerCase()); favable = false; }
           }
           console.log('favable: ' + favable);          
-          self.set('canFavorite', favable);
-          console.log('canfavorite: ' + self.get('canFavorite'));
-          return self.get('canFavorite');
+          //self.set('canFavorite', favable);
+          //console.log('canfavorite: ' + self.get('canFavorite'));
+          //return self.get('canFavorite');
+          return favable;
 
     });
 
