@@ -72,11 +72,13 @@ export default Ember.Controller.extend(BulkTopicSelection, {
       //Discourse.ajax("/stock/add_stock_to_users_favorite_stocks?ticker=" + this.get('tag.id') + ".ol", {
        // type: "GET",
       //});
+      self.set('canFavorite', false);
       addStockToUsersFavoriteStocks(this.get('tag.id'));
     },
     unFavoriteTag() {
       const self = this;
       console.log('unfavoriting');
+      self.set('canFavorite', true);
       removeStockFromUsersFavoriteStocks(this.get('tag.id'));
     },
 
