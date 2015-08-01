@@ -26,20 +26,19 @@ export default Ember.Controller.extend(BulkTopicSelection, {
           for (var i = data.stock.length - 1; i >= 0; i--) {
             var stock = jQuery.parseJSON(data.stock[i]);
             console.log('checking can fav stock step 3:' + ticker + i);
-            if(ticker.toLowerCase() == stock.symbol.toLowerCase()) { console.log(ticker + ' is a favorite stock: ' + stock.symbol.toLowerCase()); favable = false; }
+            if(ticker.toLowerCase() == stock.symbol.toLowerCase()) { console.log(ticker + ' is already favorite stock: ' + stock.symbol.toLowerCase()); self.set('canFavorite', false); }
           }
-          console.log('favable: ' + favable);          
-          self.set('canFavorite', favable);
+          //console.log('favable: ' + favable);          
           console.log('canfavorite: ' + self.get('canFavorite'));
           //return self.get('canFavorite');
-          return favable;
+          //return favable;
 
     });
 
     //return isStockUsersFavorite(ticker);
     
 
-  }.property('canFavoriteTag'),
+  }.property('canFavorite'),
 
   loadMoreTopics() {
     return this.get('list').loadMore();
