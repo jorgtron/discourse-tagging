@@ -39,7 +39,7 @@ nb_NO:
       delete_confirm: "Are you sure you want to delete that tag?"
       rename_tag: "Rediger aksje"
       rename_instructions: "Choose a new name for the tag:"
-      favorite: "Legg til i Favoritter"
+      favorite: "Legg i Favoritter"
       unfavorite: "Fjern fra Favoritter"
 
 
