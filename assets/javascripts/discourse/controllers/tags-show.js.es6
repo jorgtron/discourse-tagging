@@ -5,39 +5,35 @@ export default Ember.Controller.extend(BulkTopicSelection, {
   list: null,
 
   canAdminTag: Ember.computed.alias('currentUser.staff'),
-  
-  isTrue: true,
   canFavorite: true,
   
   canFavoriteTag: function() {
     
     const self = this;
     var ticker = this.get('tag.id');
-    console.log('checking can fav stock:' + ticker);
+    //console.log('checking can fav stock:' + ticker);
 
     Discourse.ajax("/stock/get_users_favorite_stocks", {
           type: "GET",
         }).then(function(data) {
-          console.log(data.stock);
-          console.log('checking can fav stock step 2:' + ticker);
+          //console.log(data.stock);
+          //console.log('checking can fav stock step 2:' + ticker);
           //data = data.toString;
           
           var favable = true;
           for (var i = data.stock.length - 1; i >= 0; i--) {
             var stock = jQuery.parseJSON(data.stock[i]);
-            console.log('checking can fav stock step 3:' + ticker + i);
-            if(ticker.toLowerCase() == stock.symbol.toLowerCase()) { console.log(ticker + ' is already favorite stock: ' + stock.symbol.toLowerCase()); self.set('canFavorite', false); }
+            //console.log('checking can fav stock step 3:' + ticker + i);
+            if(ticker.toLowerCase() == stock.symbol.toLowerCase()) { 
+              //console.log(ticker + ' is already favorite stock: ' + stock.symbol.toLowerCase()); 
+              self.set('canFavorite', false); }
           }
           //console.log('favable: ' + favable);          
-          console.log('canfavorite: ' + self.get('canFavorite'));
+          //console.log('canfavorite: ' + self.get('canFavorite'));
           //return self.get('canFavorite');
           //return favable;
 
     });
-
-    //return isStockUsersFavorite(ticker);
-    
-
   }.property('canFavorite'),
 
   loadMoreTopics() {
