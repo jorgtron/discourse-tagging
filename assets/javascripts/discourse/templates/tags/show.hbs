@@ -6,10 +6,12 @@
 {{#if canFavoriteTag}}
 {{/if}}   
 
-{{#if canFavorite}}
-  {{d-button action="favoriteTag" label="tagging.favorite" icon="star-o" class="admin-tag favorite-tag"}}
-{{else}}
-  {{d-button action="unFavoriteTag" label="tagging.unfavorite" icon="star-o" class="admin-tag favorite-tag tag-unfavorite"}}
+{{#if showFavoriteButton}}
+  {{#if canFavorite}}
+    {{d-button action="favoriteTag" label="tagging.favorite" icon="star-o" class="admin-tag favorite-tag"}}
+  {{else}}
+    {{d-button action="unFavoriteTag" label="tagging.unfavorite" icon="star-o" class="admin-tag favorite-tag tag-unfavorite"}}
+  {{/if}}   
 {{/if}}   
 
 {{log 'canFavorite:' canFavorite}}
