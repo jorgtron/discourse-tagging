@@ -6,6 +6,7 @@ export default Ember.Controller.extend(BulkTopicSelection, {
 
   canAdminTag: Ember.computed.alias('currentUser.staff'),
   canFavorite: true,
+  showFavoriteButton: false,
   
   canFavoriteTag: function() {
     
@@ -26,12 +27,16 @@ export default Ember.Controller.extend(BulkTopicSelection, {
             //console.log('checking can fav stock step 3:' + ticker + i);
             if(ticker.toLowerCase() == stock.symbol.toLowerCase()) { 
               //console.log(ticker + ' is already favorite stock: ' + stock.symbol.toLowerCase()); 
-              self.set('canFavorite', false); }
+              self.set('canFavorite', false); 
+              self.set('showFavoriteButton', true); 
+              
+            }
           }
           //console.log('favable: ' + favable);          
           //console.log('canfavorite: ' + self.get('canFavorite'));
           //return self.get('canFavorite');
           //return favable;
+          self.set('showFavoriteButton', true); 
 
     });
   }.property('canFavorite'),
