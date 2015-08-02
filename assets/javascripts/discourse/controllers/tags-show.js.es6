@@ -81,7 +81,11 @@ export default Ember.Controller.extend(BulkTopicSelection, {
       console.log('unfavoriting');
       
       removeStockFromUsersFavoriteStocks(this.get('tag.id'));
-      self.set('canFavorite', true);
+      
+      setTimeout(function(){
+        self.set('canFavorite', true); // add a delay since it takes a little time for the server to store the new value
+      }, 500);
+      
     },
 
 
