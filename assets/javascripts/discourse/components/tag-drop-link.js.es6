@@ -1,10 +1,18 @@
 export default Ember.Component.extend({
   tagName: 'a',
-  classNameBindings: [':discourse-tag'],
+  classNameBindings: [':tag-badge-wrapper', ':badge-wrapper', ':bullet', 'tagClass'],
   attributeBindings: ['href'],
 
   href: function() {
-    return "/tags/" + this.get('tagId');
+    var url = '/tags';
+    if (this.get('category')) {
+      url += this.get('category.url');
+    }
+    return url + '/' + this.get('tagId');
+  }.property('tagId', 'category'),
+
+  tagClass: function() {
+    return "tag-" + this.get('tagId');
   }.property('tagId'),
 
   render(buffer) {

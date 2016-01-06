@@ -32,6 +32,7 @@ en:
 
     tagging:
       all_tags: "All Tags"
+      selector_all_tags: "all tags"
       changed: "tags changed:"
       tags: "Tags"
       choose_for_topic: "choose optional tags for this topic"
@@ -39,6 +40,9 @@ en:
       delete_confirm: "Are you sure you want to delete that tag?"
       rename_tag: "Rename Tag"
       rename_instructions: "Choose a new name for the tag:"
+      sort_by: "Sort by:"
+      sort_by_count: "count"
+      sort_by_name: "name"
 
       notifications:
         watching:
@@ -53,3 +57,25 @@ en:
         muted:
           title: "Muted"
           description: "You will not be notified of anything about new topics in this tag, and they will not appear on your unread tab."
+
+      topics:
+        none:
+          unread: "You have no unread topics."
+          new: "You have no new topics."
+          read: "You haven't read any topics yet."
+          posted: "You haven't posted in any topics yet."
+          latest: "There are no latest topics."
+          hot: "There are no hot topics."
+          bookmarks: "You have no bookmarked topics yet."
+          top: "There are no top topics."
+          search: "There are no search results."
+        bottom:
+          latest: "There are no more latest topics."
+          hot: "There are no more hot topics."
+          posted: "There are no more posted topics."
+          read: "There are no more read topics."
+          new: "There are no more new topics."
+          unread: "There are no more unread topics."
+          top: "There are no more top topics."
+          bookmarks: "There are no more bookmarked topics."
+          search: "There are no more search results."

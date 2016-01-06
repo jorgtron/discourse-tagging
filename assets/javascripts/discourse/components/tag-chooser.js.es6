@@ -1,6 +1,7 @@
+import renderTag from 'discourse/plugins/discourse-tagging/lib/render-tag';
+
 function formatTag(t) {
-  const ret = "<a href class='discourse-tag'>" + Handlebars.Utils.escapeExpression(t.id) + "</a>";
-  return (t.count) ? ret + " <span class='discourse-tag-count'>x" + t.count + "</span>" : ret;
+  return renderTag(t.id, {count: t.count});
 }
 
 export default Ember.TextField.extend({
@@ -19,6 +20,7 @@ export default Ember.TextField.extend({
 
   _initializeTags: function() {
     const site = this.site,
+          self = this,
           filterRegexp = new RegExp(this.site.tags_filter_regexp, "g");
 
     this.$().select2({
@@ -62,19 +64,26 @@ export default Ember.TextField.extend({
         // Search term goes on the bottom
         list.push(item);
       },
-      formatSelectionCssClass: function () { return "discourse-tag"; },
+      formatSelection: function (data) {
+          return data ? renderTag(this.text(data)) : undefined;
+      },
+      formatSelectionCssClass: function(){
+        return "discourse-tag-select2";
+      },
       formatResult: formatTag,
-      // formatSelection: formatTag,
       multiple: true,
       ajax: {
         quietMillis: 200,
         cache: true,
-        url: "/tags/filter/search",
+        url: Discourse.getURL("/tags/filter/search"),
         dataType: 'json',
         data: function (term) {
-          return { q: term };
+          return { q: term, limit: self.siteSettings.max_tag_search_results };
         },
         results: function (data) {
+          if (self.siteSettings.tags_sort_alphabetically) {
+            data.results = data.results.sort(function(a,b) { return a.id > b.id; });
+          }
           return data;
         }
       },

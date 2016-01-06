@@ -1,13 +1,13 @@
 import ModalFunctionality from 'discourse/mixins/modal-functionality';
 import BufferedContent from 'discourse/mixins/buffered-content';
 
-export default Ember.ObjectController.extend(ModalFunctionality, BufferedContent, {
+export default Ember.Controller.extend(ModalFunctionality, BufferedContent, {
 
   renameDisabled: function() {
     const filterRegexp = new RegExp(this.site.tags_filter_regexp, "g"),
           newId = this.get('buffered.id').replace(filterRegexp, '').trim();
 
-    return (newId.length === 0) || (newId === this.get('id'));
+    return (newId.length === 0) || (newId === this.get('model.id'));
   }.property('buffered.id', 'id'),
 
   actions: {

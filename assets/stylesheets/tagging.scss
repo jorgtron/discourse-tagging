@@ -24,6 +24,10 @@
 }
 
 .extra-info-wrapper {
+  .list-tags {
+    padding-top: 5px;
+  }
+
   .discourse-tag {
     -webkit-animation: fadein .7s;
     animation: fadein .7s;
@@ -35,40 +39,107 @@
   margin: 0;
 }
 
+$tag-color: scale-color($primary, $lightness: 40%);
+
 .discourse-tag-count {
   font-size: 0.8em;
-  color: #999;
+  color: $tag-color;
 }
 
 .select2-result-label .discourse-tag {
   margin-right: 0;
 }
 
+
 .discourse-tag {
   padding: 0;
   margin: 0 5px 0 0;
-  font-size: 0.857em;
-  text-transform:uppercase;
-  /* !important is needed in the select2 widget to overwrite default styles */
-  color: #999 !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  background-color: transparent !important;
-  font-weight: bold !important;
+  color: $tag-color;
+
+  &:visited, &:hover {
+    color: $tag-color;
+  }
+
+  &.box {
+    background-color: scale-color($primary, $lightness: 90%);
+    color: scale-color($primary, $lightness: 30%);
+    padding: 2px 8px;
+  }
+
+  &.simple, &.simple:visited, &.simple:hover {
+    margin-right: 0px;
+    color: scale-color($primary, $lightness: 30%);
+  }
 }
 
-header .discourse-tag {color: scale-color($header_primary, $lightness: 50%) !important; }
+.discourse-tags, .list-tags {
+  .discourse-tag.simple:not(:last-child):after {
+    content: ",";
+    margin-left: 1px;
+  }
+}
+
+
+.select2-container-multi .select2-choices .select2-search-choice.discourse-tag-select2 {
+  padding-top: 5px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+
+.fps-result .add-full-page-tags {
+  display: inline-block;
+}
+
+.topic-list-item .discourse-tags {
+  display: block;
+  font-size: 0.75em;
+  font-weight: normal;
+  clear: both;
+  margin-top: 5px;
+
+  .discourse-tag.box {
+    position:relative;
+    top: 2px;
+  }
+}
+
+.mobile-view .topic-list-item .discourse-tags {
+  display: inline-block;
+  font-size: 0.9em;
+  margin-top: 0;
+  .discourse-tag.box {
+    position:relative;
+    top: 0;
+  }
+}
+
+
+
+.discourse-tag.bullet:before {
+  content: "\f04d";
+  font-family: FontAwesome;
+  color: scale-color($primary, $lightness: 70%);
+  margin-right: 5px;
+  font-size: 0.7em;
+  position:relative;
+  top: -0.1em;
+}
+
+header .discourse-tag {color: $tag-color !important; }
 
 .list-tags {
   display: inline;
   margin: 0 0 0 5px;
-  line-height: 1.5;
   font-size: 0.857em;
 
 }
 
 .tag-chooser {
-  width: 500px;
+  width: 100%;
   margin: 5px 0;
 }
 
@@ -76,10 +147,6 @@ header .discourse-tag {color: scale-color($header_primary, $lightness: 50%) !imp
   position: relative;
   float: right;
   margin-right: 8px;
-}
-
-.favorite-tag {
-  
 }
 
 .tag-notification-menu {
@@ -95,16 +162,14 @@ header .discourse-tag {color: scale-color($header_primary, $lightness: 50%) !imp
 }
 
 .bullet + .list-tags {
-  line-height: 1;
   display: block;
-  padding-top: 5px;
 }
 
 .bar + .list-tags {
   line-height: 1.25;
   .discourse-tag {
     vertical-align: middle;
-    }
+  }
 }
 
 .box + .list-tags {
@@ -112,4 +177,8 @@ header .discourse-tag {color: scale-color($header_primary, $lightness: 50%) !imp
   margin: 5px 0 0 5px;
   padding-top: 2px;
 
+}
+
+.tag-sort-options a {
+  text-decoration: underline;
 }
