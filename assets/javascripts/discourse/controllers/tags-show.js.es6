@@ -84,7 +84,10 @@ export default Ember.Controller.extend(BulkTopicSelection, {
     return this.get('canAdminTag') && !this.get('category');
   }.property('canAdminTag', 'category'),
 
-  canAdminTag: Ember.computed.alias('currentUser.staff'),
+  loadMoreTopics() {
+    return this.get("list").loadMore();
+  },
+
   canFavorite: true,
   showFavoriteButton: false,
   
@@ -120,10 +123,6 @@ export default Ember.Controller.extend(BulkTopicSelection, {
 
     });
   }.property('canFavorite'),
-
-  loadMoreTopics() {
-    return this.get("list").loadMore();
-  },
 
   _showFooter: function() {
     this.set("controllers.application.showFooter", !this.get("list.canLoadMore"));
@@ -191,6 +190,7 @@ export default Ember.Controller.extend(BulkTopicSelection, {
       }, 500);
       
     },
+
 
     changeTagNotification(id) {
       const tagNotification = this.get("tagNotification");
