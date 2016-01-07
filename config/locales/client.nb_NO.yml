@@ -34,11 +34,11 @@ nb_NO:
       all_tags: "Alle aksjer"
       changed: "aksjer endret:"
       tags: "Aksjer"
-      choose_for_topic: "velg ekstra aksjer for dette emnet"
+      choose_for_topic: "Skriv aksjetickeren som emnet handler om (f.eks FUNCOM.OL)"
       delete_tag: "Slett aksje"
       delete_confirm: "Er du sikker på at du ønsker å slette denne aksjen?"
       rename_tag: "Endre aksje"
-      rename_instructions: "Velg et nytt navn på denne aksje:"
+      rename_instructions: "Velg et nytt navn på denne aksjen:"
 
       notifications:
         watching:
