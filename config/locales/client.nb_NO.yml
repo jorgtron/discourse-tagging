@@ -21,35 +21,35 @@ nb_NO:
       logs:
         staff_actions:
           actions:
-            deleted_tag: "Slettet emneord"
-            renamed_tag: "Endret emneord"
+            deleted_tag: "Slettet aksje"
+            renamed_tag: "Endret aksje"
 
     topics:
       bulk:
-        change_tags: "Endre emneord"
-        choose_new_tags: "Velg nye emneord for disse emnene:"
-        changed_tags: "Emneord for disse emnene ble endret."
+        change_tags: "Rediger aksjer"
+        choose_new_tags: "Velg nye aksjer for disse emnene:"
+        changed_tags: "Aksjer for disse emnene ble endret."
 
     tagging:
-      all_tags: "Alle emneord"
-      changed: "emneord endret:"
-      tags: "Emneord"
-      choose_for_topic: "velg ekstra emneord for dette emnet"
-      delete_tag: "Slett emneord"
-      delete_confirm: "Er du sikker påat du ønsker å slette dette emneordet?"
-      rename_tag: "Endre emneord"
-      rename_instructions: "Velg et nytt navn på dette emneordet:"
+      all_tags: "Alle aksjer"
+      changed: "aksjer endret:"
+      tags: "Aksjer"
+      choose_for_topic: "velg ekstra aksjer for dette emnet"
+      delete_tag: "Slett aksje"
+      delete_confirm: "Er du sikker på at du ønsker å slette denne aksjen?"
+      rename_tag: "Endre aksje"
+      rename_instructions: "Velg et nytt navn på denne aksje:"
 
       notifications:
         watching:
           title: "Følger"
-          description: "Du vil automatisk følge alle nye emner med dette emneordet. Du vil bli varslet om alle nye innlegg og emner samt at antallet uleste og nye innlegg vil vises sammen med emneoppføringen."
+          description: "Du vil automatisk følge alle nye emner om denne aksjen. Du vil bli varslet om alle nye innlegg og emner samt at antallet uleste og nye innlegg vil vises sammen med emneoppføringen."
         tracking:
           title: "Følger"
-          description: "Du vil automatisk følge alle nye emner med dette emneordet. Antallet uleste og nye innlegg vil vises sammen med emneoppføringen."
+          description: "Du vil automatisk følge alle nye emner om denne aksjen. Antallet uleste og nye innlegg vil vises sammen med emneoppføringen."
         regular:
           title: "Vanlig"
           description: "Du vil bli varslet om noen nevnet ditt @navn eller svarer på din post."
         muted:
           title: "Dempet"
-          description: "Du vil ikke bli varslet om noe vedrørende disse emneneordene og de vil ikke vises i din ulest-liste."
+          description: "Du vil ikke bli varslet om noe vedrørende denne aksjen og de vil ikke vises i din ulest-liste."
