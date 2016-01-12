@@ -103,16 +103,16 @@ export default Ember.Controller.extend(BulkTopicSelection, {
     Discourse.ajax("/stock/get_users_favorite_stocks", {
           type: "GET",
         }).then(function(data) {
-          //console.log(data.stock);
-          //console.log('checking can fav stock step 2:' + ticker);
+          console.log(data.stock);
+          console.log('checking can fav stock step 2:' + ticker);
           //data = data.toString;
           
           var favable = true;
           for (var i = data.stock.length - 1; i >= 0; i--) {
             var stock = jQuery.parseJSON(data.stock[i]);
-            //console.log('checking can fav stock step 3:' + ticker + i);
+            console.log('checking can fav stock step 3:' + ticker + i);
             if(ticker.toLowerCase() == stock.symbol.toLowerCase()) { 
-              //console.log(ticker + ' is already favorite stock: ' + stock.symbol.toLowerCase()); 
+              console.log(ticker + ' is already favorite stock: ' + stock.symbol.toLowerCase()); 
               self.set('canFavorite', false); 
               self.set('showFavoriteButton', true); 
             }
