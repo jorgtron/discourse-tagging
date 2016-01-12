@@ -108,6 +108,7 @@ export default Ember.Controller.extend(BulkTopicSelection, {
           //data = data.toString;
           
           var favable = true;
+          self.set('canFavorite', true);  // default
           for (var i = data.stock.length - 1; i >= 0; i--) {
             var stock = jQuery.parseJSON(data.stock[i]);
             console.log('checking can fav stock step 3:' + ticker + i);
