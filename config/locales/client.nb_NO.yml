@@ -39,6 +39,8 @@ nb_NO:
       delete_confirm: "Er du sikker på at du ønsker å slette denne aksjen?"
       rename_tag: "Endre aksje"
       rename_instructions: "Velg et nytt navn på denne aksjen:"
+      favorite: "Legg til i Favoritter"
+      unfavorite: "Fjern fra Favoritter"
 
       notifications:
         watching:
