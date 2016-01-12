@@ -122,7 +122,7 @@ export default Ember.Controller.extend(BulkTopicSelection, {
           self.set('showFavoriteButton', true); 
 
     });
-  }.property('canFavorite'),
+  }.property('canFavorite').volatile(),
 
   _showFooter: function() {
     this.set("controllers.application.showFooter", !this.get("list.canLoadMore"));
