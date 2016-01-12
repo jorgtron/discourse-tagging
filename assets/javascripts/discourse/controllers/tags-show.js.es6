@@ -88,7 +88,10 @@ export default Ember.Controller.extend(BulkTopicSelection, {
     return this.get("list").loadMore();
   },
 
-  canFavorite: true,
+  canFavorite: function() {
+    return true;
+  }.property('canFavoriteTag').volatile(),
+
   showFavoriteButton: false,
   
   canFavoriteTag: function() {
@@ -112,7 +115,6 @@ export default Ember.Controller.extend(BulkTopicSelection, {
               //console.log(ticker + ' is already favorite stock: ' + stock.symbol.toLowerCase()); 
               self.set('canFavorite', false); 
               self.set('showFavoriteButton', true); 
-              
             }
           }
           //console.log('favable: ' + favable);          
@@ -120,7 +122,7 @@ export default Ember.Controller.extend(BulkTopicSelection, {
           //return self.get('canFavorite');
           //return favable;
           self.set('showFavoriteButton', true); 
-
+          return self.get('canFavorite');
     });
   }.property('canFavorite').volatile(),
 
