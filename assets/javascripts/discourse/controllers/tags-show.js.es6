@@ -88,6 +88,15 @@ export default Ember.Controller.extend(BulkTopicSelection, {
     return this.get("list").loadMore();
   },
 
+  chartURL: function() {
+    
+    const self = this;
+    var ticker = this.get('tag.id');
+
+    return 'https://tekinvestor.com/chart.php?symbol=' + ticker;
+
+  },
+
   canFavorite: function() {
     return true;
   }.property('canFavoriteTag').volatile(),
