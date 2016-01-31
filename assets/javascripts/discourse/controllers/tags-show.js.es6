@@ -95,7 +95,7 @@ export default Ember.Controller.extend(BulkTopicSelection, {
 
     return 'https://tekinvestor.com/chart.php?symbol=' + ticker;
 
-  }.property('chartURL'),
+  }.property('chartURL').volatile(),
 
   canFavorite: function() {
     return true;
