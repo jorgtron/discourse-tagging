@@ -119,10 +119,10 @@ export default Ember.Controller.extend(BulkTopicSelection, {
           var favable = true;
           self.set('canFavorite', true);  // default
           for (var i = data.stock.length - 1; i >= 0; i--) {
-            var stock = jQuery.parseJSON(data.stock[i]);
+            //var stock = jQuery.parseJSON(data.stock[i]);
             console.log('checking can fav stock step 3:' + ticker + i);
-            if(ticker.toLowerCase() == stock.symbol.toLowerCase()) { 
-              console.log(ticker + ' is already favorite stock: ' + stock.symbol.toLowerCase()); 
+            if(ticker.toLowerCase() == data.stock[i].stock[0].toLowerCase() ) { 
+              console.log(ticker + ' is already favorite stock: ' + data.stock[i].stock[0].toLowerCase() ); 
               self.set('canFavorite', false); 
               self.set('showFavoriteButton', true); 
             }
